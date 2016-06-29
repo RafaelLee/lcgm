@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listagem de Amostras</h1>
+
+<%= link_to 'Nova Amostra', new_cadastro_path %>
+
+<table data-role="table" data-mode="columntoggle" class="ui-responsive ui-shadow" id="myTable" data-filter="true" data-input="#filterTable-input">
+
+  <thead>
+    <tr>
+      <th>Data da Coleta</th>
+      <th>Nome</th>
+      <th>Procedência</th>
+      <th>HD</th>
+      <th>Obs</th>
+      <th>Data da Extração</th>
+      <th>Volume Extraído</th>
+      <th>Concentração</th>
+      <th>Número da Amostra</th>
+      <th>Local Armazenagem</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cadastros.each do |cadastro| %>
+      <tr>
+        <td><%= cadastro.dateC %></td>
+        <td><%= cadastro.name %></td>
+        <td><%= cadastro.proced %></td>
+        <td><%= cadastro.hd %></td>
+        <td><%= cadastro.obs %></td>
+        <td><%= cadastro.dateE %></td>
+        <td><%= cadastro.volume %></td>
+        <td><%= cadastro.concent %></td>
+        <td><%= cadastro.number %></td>
+        <td><%= cadastro.local %></td>
+        <td><%= link_to 'Exibir', cadastro %></td>
+        <td><%= link_to 'Editar', edit_cadastro_path(cadastro) %></td>
+        <td><%= link_to 'Deletar', cadastro, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+

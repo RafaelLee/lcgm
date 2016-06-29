@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Data da Coleta:</strong>
+  <%= @cadastro.dateC %>
+</p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @cadastro.name %>
+</p>
+
+<p>
+  <strong>Procedência:</strong>
+  <%= @cadastro.proced %>
+</p>
+
+<p>
+  <strong>HD:</strong>
+  <%= @cadastro.hd %>
+</p>
+
+<p>
+  <strong>Obs:</strong>
+  <%= @cadastro.obs %>
+</p>
+
+<p>
+  <strong>Data da Extração:</strong>
+  <%= @cadastro.dateE %>
+</p>
+
+<p>
+  <strong>Volume Extraído:</strong>
+  <%= @cadastro.volume %>
+</p>
+
+<p>
+  <strong>Concentração:</strong>
+  <%= @cadastro.concent %>
+</p>
+
+<p>
+  <strong>Número da Amostra:</strong>
+  <%= @cadastro.number %>
+</p>
+
+<p>
+  <strong>Local Armazenagem:</strong>
+  <%= @cadastro.local %>
+</p>
+
+<%= link_to 'Editar', edit_cadastro_path(@cadastro) %> |
+<%= link_to 'Listar Amostras', cadastros_path %>

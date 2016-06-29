@@ -1,0 +1,57 @@
+<%= form_for(@cadastro) do |f| %>
+  <% if @cadastro.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cadastro.errors.count, "error") %> prohibited this cadastro from being saved:</h2>
+
+      <ul>
+      <% @cadastro.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Data da Coleta" %><br>
+    <%= f.date_select :dateC, :order => [:day, :month, :year], use_month_numbers: true %>
+  </div>
+  <div class="field">
+    <%= f.label "Nome" %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label "Procedência"%><br>
+    <%= f.text_field :proced %>
+  </div>
+  <div class="field">
+    <%= f.label "HD" %><br>
+    <%= f.text_field :hd %>
+  </div>
+  <div class="field">
+    <%= f.label :obs %><br>
+    <%= f.text_area :obs %>
+  </div>
+  <div class="field">
+    <%= f.label "Data da Extração" %><br>
+    <%= f.date_select :dateE , :order => [:day, :month, :year], use_month_numbers: true%>
+  </div>
+  <div class="field">
+    <%= f.label "Volume Extraído" %><br>
+    <%= f.number_field :volume %> ml (ex: 10ul = 0,01ml)
+    </div>
+  <div class="field">
+    <%= f.label "Concentração" %><br>
+    <%= f.number_field :concent %>
+  </div>
+  <div class="field">
+    <%= f.label "Número da Amostra" %><br>
+    <%= f.text_field :number %>
+  </div>
+  <div class="field">
+    <%= f.label "Local Armazenagem" %><br>
+    <%= f.text_field :local %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Gravar Amostra" %>
+  </div>
+<% end %>
